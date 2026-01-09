@@ -1,23 +1,46 @@
 <template>
   <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Tab 2</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Tab 2</ion-title>
-        </ion-toolbar>
-      </ion-header>
+    <ion-tabs>
 
-      <ExploreContainer name="Tab 2 page" />
-    </ion-content>
+      <ion-router-outlet></ion-router-outlet>
+
+      <ion-tab-bar slot="bottom">
+
+        <ion-tab-button tab="tab1" href="/tabs/tab1">
+          <ion-icon :icon="homeOutline"></ion-icon>
+          <ion-label>Inicio</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="tab2" href="/tabs/tab2">
+          <ion-icon :icon="documentTextOutline"></ion-icon>
+          <ion-label>Cotizaciones</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="tab3" href="/tabs/tab3">
+          <ion-icon :icon="settingsOutline"></ion-icon>
+          <ion-label>Configuración</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+
+    </ion-tabs>
   </ion-page>
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
+import {
+  IonPage,
+  IonTabs,
+  IonRouterOutlet,
+  IonTabBar,
+  IonTabButton,
+  IonIcon,
+  IonLabel
+} from '@ionic/vue';
+
+import {
+  homeOutline,
+  documentTextOutline,
+  settingsOutline
+} from 'ionicons/icons';
 </script>
